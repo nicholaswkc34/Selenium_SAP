@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite thread-count="8" name="Selenium SAP" verbose="1" configfailurepolicy="continue">
+	<test name="Selenium SAP Test" preserve-order="true" annotations="JDK">
+		<classes>
+            <class name="com.peterwkc.test.Selenium_SAP"/>
+        </classes>
+	</test>
+
+</suite>

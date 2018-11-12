@@ -1,0 +1,97 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.peterwkc.Selenium_SAP</groupId>
+  <artifactId>Selenium_SAP</artifactId>
+  <version>1.0.0-SNAPSHOT</version>
+
+  <name>Maven</name>
+  <url>http://maven.apache.org/</url>
+  <inceptionYear>2001</inceptionYear>
+
+  <distributionManagement>
+    <site>
+      <id>website</id>
+      <url>scp://webhost.company.com/www/website</url>
+    </site>
+  </distributionManagement>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+  
+  <dependencies>
+  	<dependency>
+	    <groupId>org.seleniumhq.selenium</groupId>
+	    <artifactId>selenium-java</artifactId>
+	    <version>3.12.0</version>
+	</dependency>
+	
+	<dependency>
+	    <groupId>org.seleniumhq.selenium</groupId>
+	    <artifactId>selenium-chrome-driver</artifactId>
+	    <version>3.12.0</version>
+	</dependency>
+	
+	<dependency>
+  		<groupId>org.testng</groupId>
+  		<artifactId>testng</artifactId>
+  		<version>6.8</version>
+	</dependency>
+	
+	<dependency>
+    	<groupId>org.apache.maven.surefire</groupId>
+    	<artifactId>surefire-booter</artifactId>
+    	<version>2.18.1</version>
+	</dependency>
+	
+	<dependency>
+    	<groupId>org.apache.maven.surefire</groupId>
+    	<artifactId>surefire-testng</artifactId>
+    	<version>2.18.1</version>
+	</dependency>
+	
+	<dependency>
+    	<groupId>org.apache.maven.plugins</groupId>
+    	<artifactId>maven-surefire-report-plugin</artifactId>
+    	<version>2.18.1</version>
+	</dependency>
+	
+	<dependency>
+   	 	<groupId>org.apache.maven.surefire</groupId>
+   		 <artifactId>surefire-api</artifactId>
+    	<version>2.18.1</version>
+	</dependency>
+
+	
+  </dependencies>
+
+  <build>
+    <plugins>
+    	<plugin>
+    		
+    		<groupId>org.apache.maven.plugins</groupId>
+       		<artifactId>maven-surefire-plugin</artifactId>
+        	<version>2.18.1</version>
+        	<configuration>
+          		<parallel>methods</parallel>
+          		<threadCount>10</threadCount>
+          		<suiteXmlFiles>
+            	<suiteXmlFile>src/test/resources/testng.xml </suiteXmlFile>
+        		</suiteXmlFiles>
+        	</configuration>
+    	</plugin>
+    	
+    
+    
+      <plugin>
+        <artifactId>maven-site-plugin</artifactId>
+        <version>3.7.1</version>
+        <configuration>
+          <locales>en</locales>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>
